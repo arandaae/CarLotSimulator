@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CarLotSimulator
 {
@@ -17,20 +18,23 @@ namespace CarLotSimulator
             //Now that the Car class is created we can instanciate 3 new cars
             //Set the properties for each of the cars
             //Call each of the methods for each car
-            var car1 = new Car();
-            {
-                car1.Year = 2022;
-                car1.Make = "Toyota";
-                car1.Model = "Camry";
-                car1.EngineNoise = "Quiet";
-                car1.HonkNoise = "Loud";
-                car1.IsDriveable = "Yes";
+            //var car1 = new Car();
+            //Car car1 = new Car();
+            Car car1 = new Car() { Year = 2022, Make = "Toyota", Model = "Camry", EngineNoise = "Quiet", HonkNoise = "Loud", IsDriveable = "Yes" };
+            car1.NewCar();
+            //{
+            //    car1.Year = 2022;
+            //    car1.Make = "Toyota";
+            //    car1.Model = "Camry";
+            //    car1.EngineNoise = "Quiet";
+            //    car1.HonkNoise = "Loud";
+            //    car1.IsDriveable = "Yes";
 
-                car1.MakeEngineNoise();
-                car1.MakeHonkNoise();
+            //    car1.MakeEngineNoise();
+            //    car1.MakeHonkNoise();
 
-                car1.NewCar();
-            };
+            //    car1.NewCar();
+            //};
             Console.WriteLine();
             Console.WriteLine("----------------------------");
 
@@ -47,7 +51,8 @@ namespace CarLotSimulator
                 car2.MakeHonkNoise();
 
                 car2.NewCar();
-            };
+            }
+
             Console.WriteLine();
             Console.WriteLine("----------------------------");
 
@@ -65,6 +70,16 @@ namespace CarLotSimulator
 
                 car3.NewCar();
             };
+
+            var carList = new List<Car>();
+            carList.Add(car1);
+            carList.Add(car2);
+            carList.Add(car3);
+
+            foreach (var item in carList)
+            {
+                Console.WriteLine(item);
+            }
             //*************BONUS*************//
 
             // Set the properties utilizing the 3 different ways we learned about, one way for each car
