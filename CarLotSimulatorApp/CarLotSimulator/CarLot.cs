@@ -4,7 +4,11 @@ using System.Text;
 
 namespace CarLotSimulator
 {
-    internal class CarLot
+    public class CarLot
     {
+        public static int numberOfCars;
+
+        public List<Car> ParkingLot { get; set; }  = new List<Car>();  
     }
+
 }

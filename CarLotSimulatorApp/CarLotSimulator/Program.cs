@@ -20,21 +20,16 @@ namespace CarLotSimulator
             //Call each of the methods for each car
             //var car1 = new Car();
             //Car car1 = new Car();
+
+            CarLot carLot = new CarLot();
+            
             Car car1 = new Car() { Year = 2022, Make = "Toyota", Model = "Camry", EngineNoise = "Quiet", HonkNoise = "Loud", IsDriveable = "Yes" };
-            car1.NewCar();
-            //{
-            //    car1.Year = 2022;
-            //    car1.Make = "Toyota";
-            //    car1.Model = "Camry";
-            //    car1.EngineNoise = "Quiet";
-            //    car1.HonkNoise = "Loud";
-            //    car1.IsDriveable = "Yes";
-
-            //    car1.MakeEngineNoise();
-            //    car1.MakeHonkNoise();
-
-            //    car1.NewCar();
-            //};
+            car1.NewCar();      
+            car1.MakeEngineNoise();
+            car1.MakeHonkNoise();
+            carLot.ParkingLot.Add(car1);
+            Console.WriteLine($"Number of Cars in the lot is: {CarLot.numberOfCars}");
+           
             Console.WriteLine();
             Console.WriteLine("----------------------------");
 
@@ -47,10 +42,11 @@ namespace CarLotSimulator
                 car2.HonkNoise = "Loud";
                 car2.IsDriveable = "No";
 
+                car2.NewCar();
                 car2.MakeEngineNoise();
                 car2.MakeHonkNoise();
-
-                car2.NewCar();
+                carLot.ParkingLot.Add(car2);
+                Console.WriteLine($"Number of Cars in the lot is: {CarLot.numberOfCars}");
             }
 
             Console.WriteLine();
@@ -65,21 +61,18 @@ namespace CarLotSimulator
                 car3.HonkNoise = "Loud";
                 car3.IsDriveable = "Yes";
 
+                car3.NewCar();
                 car3.MakeEngineNoise();
                 car3.MakeHonkNoise();
-
-                car3.NewCar();
+                carLot.ParkingLot.Add(car3);
+                Console.WriteLine($"Number of Cars in the lot is: {CarLot.numberOfCars}");
             };
 
-            var carList = new List<Car>();
-            carList.Add(car1);
-            carList.Add(car2);
-            carList.Add(car3);
 
-            foreach (var item in carList)
-            {
-                Console.WriteLine(item);
-            }
+            
+
+
+
             //*************BONUS*************//
 
             // Set the properties utilizing the 3 different ways we learned about, one way for each car
